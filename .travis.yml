@@ -8,11 +8,13 @@ install:
   - npm install
   
 script:
+
   - docker pull docker9856iii/bdd-test
   - docker run -v $PWD/:/app/report/ docker9856iii/bdd-test
 
 after_script:
   - bash ./telegram_notification.sh
+  
   
 # after_success:
 
